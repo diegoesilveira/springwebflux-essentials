@@ -14,11 +14,9 @@ import reactor.blockhound.BlockingOperationError;
 import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 class AnimeServiceTest {
@@ -53,7 +51,8 @@ class AnimeServiceTest {
     @Test
     @DisplayName("FindAll return a flux of anime")
     public void findAll_ReturnFluxOfAnime_whenSuccessful(){
-        StepVerifier.create()
+
+//        StepVerifier.create();
     }
 
 

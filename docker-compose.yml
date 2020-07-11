@@ -10,7 +10,7 @@ services:
     ports:
     - "5432:5432"
     volumes:
-    - webflux_data:\C:\Users\diego\Documents\Desenvolvimento\docker_images
+    -  webflux_data:/var/lib/postgresql/data
 
 volumes:
   webflux_data:

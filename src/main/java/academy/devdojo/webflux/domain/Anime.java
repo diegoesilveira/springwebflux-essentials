@@ -6,6 +6,8 @@ import org.springframework.data.annotation.Id;
 import java.util.Objects;
 
 
+
+@Data
 @Builder
 public class Anime {
 

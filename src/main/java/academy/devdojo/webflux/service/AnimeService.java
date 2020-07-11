@@ -4,7 +4,9 @@ import academy.devdojo.webflux.domain.Anime;
 import academy.devdojo.webflux.repository.AnimeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.XSlf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -20,7 +22,9 @@ public class AnimeService {
     }
 
     public Mono<Anime> findById(int id){
-        return animeRepository.findById(id);
+        return animeRepository.findById(id)
+                .switchIfEmpty(Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "Anime not Found")))
+                .log();
     }
 
     public Mono<Anime> save(Anime anime){
