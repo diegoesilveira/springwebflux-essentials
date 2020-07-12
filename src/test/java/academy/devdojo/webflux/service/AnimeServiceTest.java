@@ -1,6 +1,8 @@
 package academy.devdojo.webflux.service;
 
+import academy.devdojo.webflux.domain.Anime;
 import academy.devdojo.webflux.repository.AnimeRepository;
+import academy.devdojo.webflux.stub.AnimeStub;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -27,6 +29,8 @@ class AnimeServiceTest {
     @Mock
     private AnimeRepository animeRepository;
 
+    private final Anime anime = AnimeStub.createValidAnime();
+
     @BeforeAll
     public static void blockHoundSetup(){
         BlockHound.install();
@@ -52,8 +56,9 @@ class AnimeServiceTest {
     @DisplayName("FindAll return a flux of anime")
     public void findAll_ReturnFluxOfAnime_whenSuccessful(){
 
-//        StepVerifier.create();
     }
+
+
 
 
 
