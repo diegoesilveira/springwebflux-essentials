@@ -14,7 +14,7 @@ public class AnimeStub {
     public static Anime createValidAnime(){
         return Anime.builder()
                 .id(1)
-                .name("João")
+                .name("Diego")
                 .build();
     }
 

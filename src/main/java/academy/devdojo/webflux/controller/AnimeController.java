@@ -1,21 +1,18 @@
 package academy.devdojo.webflux.controller;
 
 import academy.devdojo.webflux.domain.Anime;
-import academy.devdojo.webflux.repository.AnimeRepository;
 import academy.devdojo.webflux.service.AnimeService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.XSlf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/animes")
-@XSlf4j
+@Slf4j
+@RequiredArgsConstructor
 public class AnimeController {
 
     private AnimeService animeService;
@@ -50,9 +47,9 @@ public class AnimeController {
         return animeService.delete(id);
 
     }
-
-    public <T> Mono<T> monoResponseStatusNotFoundException(){
-        return Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "NOT FOUND"));
-    }
+//
+//    public <T> Mono<T> monoResponseStatusNotFoundException(){
+//        return Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "NOT FOUND"));
+//    }
 
 }
